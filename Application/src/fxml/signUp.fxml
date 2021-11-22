@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <ImageView fitHeight="649.0" fitWidth="610.0" layoutX="-6.0" layoutY="-24.0" pickOnBounds="true">
+         <image>
+            <Image url="@../images/welcome.png" />
+         </image>
+      </ImageView>
+      <Label alignment="CENTER" layoutX="150.0" prefHeight="93.0" prefWidth="300.0" text="Sign Up" textFill="#3a3943">
+         <font>
+            <Font name="Rockwell" size="64.0" />
+         </font>
+      </Label>
+      <Pane layoutX="99.0" layoutY="113.0" opacity="0.8" prefHeight="450.0" prefWidth="400.0" style="-fx-background-color: #2d96bf; -fx-background-radius: 20;">
+         <children>
+            <Label layoutX="167.0" layoutY="70.0" text="Email" textFill="#04030d">
+               <font>
+                  <Font name="Rockwell" size="24.0" />
+               </font>
+            </Label>
+            <TextField layoutX="25.0" layoutY="100.0" prefWidth="350.0" promptText="example@email.com">
+               <font>
+                  <Font name="Rockwell" size="18.0" />
+               </font>
+            </TextField>
+            <Label layoutX="147.0" layoutY="135.0" text="Password" textFill="#04030d">
+               <font>
+                  <Font name="Rockwell" size="24.0" />
+               </font>
+            </Label>
+            <TextField layoutX="25.0" layoutY="165.0" prefWidth="350.0" promptText="********">
+               <font>
+                  <Font name="Rockwell" size="18.0" />
+               </font>
+            </TextField>
+            <Label layoutX="31.0" layoutY="372.0" />
+            <Label layoutX="166.0" layoutY="5.0" text="Name" textFill="#04030d">
+               <font>
+                  <Font name="Rockwell" size="24.0" />
+               </font>
+            </Label>
+            <TextField layoutX="25.0" layoutY="35.0" prefWidth="350.0" promptText="Your Name">
+               <font>
+                  <Font name="Rockwell" size="18.0" />
+               </font>
+            </TextField>
+            <Label layoutX="102.0" layoutY="200.0" text="Security Question" textFill="#04030d">
+               <font>
+                  <Font name="Rockwell" size="24.0" />
+               </font>
+            </Label>
+            <ComboBox layoutX="26.0" layoutY="230.0" prefHeight="25.0" prefWidth="350.0" promptText="Select Your Question" />
+            <Label layoutX="163.0" layoutY="260.0" text="Answer" textFill="#04030d">
+               <font>
+                  <Font name="Rockwell" size="24.0" />
+               </font>
+            </Label>
+            <TextField layoutX="25.0" layoutY="290.0" prefWidth="350.0" promptText="Your answer">
+               <font>
+                  <Font name="Rockwell" size="18.0" />
+               </font>
+            </TextField>
+            <Label layoutX="151.0" layoutY="325.0" text="Address" textFill="#04030d">
+               <font>
+                  <Font name="Rockwell" size="24.0" />
+               </font>
+            </Label>
+            <TextField layoutX="30.0" layoutY="355.0" prefWidth="350.0" promptText="123 Nowhere, 99999 FIN">
+               <font>
+                  <Font name="Rockwell" size="18.0" />
+               </font>
+            </TextField>
+            <Button alignment="CENTER" layoutX="78.0" layoutY="400.0" mnemonicParsing="false" prefHeight="45.0" prefWidth="238.0" text="Sign Up" textFill="#04030d">
+               <font>
+                  <Font name="Rockwell" size="24.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>

@@ -6,6 +6,13 @@
   "configurations": [
     {
       "type": "java",
+      "name": "Launch Tables",
+      "request": "launch",
+      "mainClass": "Tables",
+      "projectName": "Application_b2b9691d"
+    },
+    {
+      "type": "java",
       "name": "Launch Current File",
       "request": "launch",
       "mainClass": "${file}"
