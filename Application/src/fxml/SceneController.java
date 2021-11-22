@@ -11,9 +11,11 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 
 public class SceneController {
+    // -------------------- VARIABLES -------------------- \\
     private Stage stage;
     private Scene scene;
     private Parent root;
+    // -------------------- END OF VARIABLES -------------------- \\
 
     public void switchToLogin(ActionEvent event) {
         try {

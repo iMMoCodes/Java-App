@@ -1,3 +1,4 @@
+package mySQLConnection;
 import java.sql.Connection;
 import java.sql.DriverManager;
 
@@ -8,6 +9,7 @@ public class ConnectionProvider {
             Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/salesapp", System.getenv("mySQLusername"), System.getenv("mySQLpassword"));
             return connection;
         } catch (Exception e) {
+            e.printStackTrace();
             return null;
         }
     }

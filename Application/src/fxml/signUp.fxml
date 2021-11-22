@@ -4,6 +4,7 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
@@ -30,7 +31,7 @@
                   <Font name="Rockwell" size="24.0" />
                </font>
             </Label>
-            <TextField layoutX="25.0" layoutY="100.0" prefWidth="350.0" promptText="example@email.com">
+            <TextField fx:id="signUpEmailField" layoutX="25.0" layoutY="100.0" prefWidth="350.0" promptText="example@email.com">
                <font>
                   <Font name="Rockwell" size="18.0" />
                </font>
@@ -40,18 +41,13 @@
                   <Font name="Rockwell" size="24.0" />
                </font>
             </Label>
-            <TextField layoutX="25.0" layoutY="165.0" prefWidth="350.0" promptText="********">
-               <font>
-                  <Font name="Rockwell" size="18.0" />
-               </font>
-            </TextField>
             <Label layoutX="31.0" layoutY="372.0" />
             <Label layoutX="166.0" layoutY="5.0" text="Name" textFill="#04030d">
                <font>
                   <Font name="Rockwell" size="24.0" />
                </font>
             </Label>
-            <TextField layoutX="25.0" layoutY="35.0" prefWidth="350.0" promptText="Your Name">
+            <TextField fx:id="signUpNameField" layoutX="25.0" layoutY="35.0" prefWidth="350.0" promptText="Your Name">
                <font>
                   <Font name="Rockwell" size="18.0" />
                </font>
@@ -67,7 +63,7 @@
                   <Font name="Rockwell" size="24.0" />
                </font>
             </Label>
-            <TextField layoutX="25.0" layoutY="290.0" prefWidth="350.0" promptText="Your answer">
+            <TextField fx:id="signUpAnswerField" layoutX="25.0" layoutY="290.0" prefWidth="350.0" promptText="Your answer">
                <font>
                   <Font name="Rockwell" size="18.0" />
                </font>
@@ -77,12 +73,12 @@
                   <Font name="Rockwell" size="24.0" />
                </font>
             </Label>
-            <TextField layoutX="30.0" layoutY="355.0" prefWidth="350.0" promptText="123 Nowhere, 99999 FIN">
+            <TextField fx:id="signUpAddressField" layoutX="30.0" layoutY="355.0" prefWidth="350.0" promptText="123 Nowhere, 99999 FIN">
                <font>
                   <Font name="Rockwell" size="18.0" />
                </font>
             </TextField>
-            <Button alignment="CENTER" layoutX="78.0" layoutY="400.0" mnemonicParsing="false" prefHeight="45.0" prefWidth="238.0" text="Sign Up" textFill="#04030d">
+            <Button fx:id="signUpButton" alignment="CENTER" layoutX="78.0" layoutY="400.0" mnemonicParsing="false" onAction="#sendSignUpData" prefHeight="45.0" prefWidth="238.0" text="Sign Up" textFill="#04030d">
                <font>
                   <Font name="Rockwell" size="24.0" />
                </font>
@@ -90,6 +86,11 @@
                   <Cursor fx:constant="HAND" />
                </cursor>
             </Button>
+            <PasswordField fx:id="signUpPasswordField" layoutX="25.0" layoutY="165.0" prefWidth="350.0" promptText="********">
+               <font>
+                  <Font name="Rockwell" size="18.0" />
+               </font>
+            </PasswordField>
          </children>
       </Pane>
    </children>

@@ -1,3 +1,4 @@
+package mySQLConnection;
 import java.sql.*;
 
 import javax.swing.JOptionPane;
@@ -20,7 +21,7 @@ public class Tables {
                 connection.close();
                 statement.close();
             } catch (Exception e) {
-                
+                e.printStackTrace();
             }
         }
     }

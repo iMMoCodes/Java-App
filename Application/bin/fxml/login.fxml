@@ -35,6 +35,7 @@
 <?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
@@ -66,11 +67,6 @@
                   <Font name="Rockwell" size="24.0" />
                </font>
             </Label>
-            <TextField layoutX="24.0" layoutY="190.0" prefHeight="34.0" prefWidth="350.0" promptText="********">
-               <font>
-                  <Font name="Rockwell" size="18.0" />
-               </font>
-            </TextField>
             <Button alignment="CENTER" layoutX="80.0" layoutY="250.0" mnemonicParsing="false" prefHeight="60.0" prefWidth="238.0" text="Login" textFill="#04030d">
                <font>
                   <Font name="Rockwell" size="24.0" />
@@ -81,6 +77,11 @@
             </Button>
             <Label layoutX="31.0" layoutY="372.0" />
             <Button layoutX="171.0" layoutY="365.0" mnemonicParsing="false" onAction="#switchToSignUp" text="Sign Up" textFill="#04030d" />
+            <PasswordField layoutX="25.0" layoutY="190.0" prefWidth="350.0" promptText="********">
+               <font>
+                  <Font name="Rockwell" size="18.0" />
+               </font>
+            </PasswordField>
          </children>
       </Pane>
       <Label alignment="CENTER" layoutX="149.0" layoutY="14.0" prefHeight="93.0" prefWidth="300.0" text="Login" textFill="#3a3943">
