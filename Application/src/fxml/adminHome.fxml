@@ -11,7 +11,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="768.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="fxml.adminHomeController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="768.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="fxml.AdminHomeController">
    <children>
       <ImageView fitHeight="768.0" fitWidth="1280.0" pickOnBounds="true" preserveRatio="true">
          <image>
@@ -54,27 +54,27 @@
             <Font name="Rockwell" size="24.0" />
          </font>
       </Label>
-      <TextField layoutX="635.0" layoutY="120.0" prefHeight="34.0" prefWidth="370.0">
+      <TextField fx:id="searchText" layoutX="635.0" layoutY="120.0" prefHeight="34.0" prefWidth="370.0">
          <font>
             <Font name="Rockwell" size="18.0" />
          </font>
       </TextField>
-      <Button layoutX="1025.0" layoutY="120.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="105.0" text="Search" textFill="#1846c4">
+      <Button layoutX="1025.0" layoutY="120.0" mnemonicParsing="false" onAction="#insertUsersToTable" prefHeight="34.0" prefWidth="105.0" text="Search" textFill="#1846c4">
          <font>
             <Font name="Rockwell" size="18.0" />
          </font>
       </Button>
-      <Button layoutX="1145.0" layoutY="120.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="105.0" text="Clear" textFill="#1846c4">
+      <Button layoutX="1145.0" layoutY="120.0" mnemonicParsing="false" onAction="#clearSearch" prefHeight="34.0" prefWidth="105.0" text="Clear" textFill="#1846c4">
          <font>
             <Font name="Rockwell" size="18.0" />
          </font>
       </Button>
-      <TableView layoutX="350.0" layoutY="185.0" prefHeight="500.0" prefWidth="900.0">
+      <TableView fx:id="userTable" layoutX="350.0" layoutY="185.0" prefHeight="500.0" prefWidth="900.0">
         <columns>
-          <TableColumn prefWidth="225.0" text="Name" />
-          <TableColumn minWidth="0.0" prefWidth="225.0" text="Email" />
-            <TableColumn prefWidth="225.0" text="Address" />
-            <TableColumn prefWidth="225.0" text="Status" />
+          <TableColumn fx:id="name" prefWidth="225.0" text="Name" />
+          <TableColumn fx:id="email" minWidth="0.0" prefWidth="225.0" text="Email" />
+            <TableColumn fx:id="address" prefWidth="225.0" text="Address" />
+            <TableColumn fx:id="status" prefWidth="225.0" text="Status" />
         </columns>
       </TableView>
    </children>
