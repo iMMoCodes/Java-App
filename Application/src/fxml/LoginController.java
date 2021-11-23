@@ -44,7 +44,7 @@ public class LoginController {
                 if(loggedInUser.next()) {
                     check = 1;
                     // If user is active -> show home page
-                    if(loggedInUser.getString(7).equals("true")) {
+                    if(loggedInUser.getString("status").equals("true")) {
                         switchToHome(event);
                     }
                     // User is not active

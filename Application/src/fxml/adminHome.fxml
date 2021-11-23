@@ -69,7 +69,7 @@
             <Font name="Rockwell" size="18.0" />
          </font>
       </Button>
-      <TableView fx:id="userTable" layoutX="350.0" layoutY="185.0" prefHeight="500.0" prefWidth="900.0">
+      <TableView fx:id="userTable" layoutX="350.0" layoutY="185.0" onMouseClicked="#changeStatusOfUser" prefHeight="500.0" prefWidth="900.0">
         <columns>
           <TableColumn fx:id="name" prefWidth="225.0" text="Name" />
           <TableColumn fx:id="email" minWidth="0.0" prefWidth="225.0" text="Email" />

@@ -16,6 +16,7 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import models.UserModelTable;
+import mySQLConnection.InsertUpdateDelete;
 import mySQLConnection.SelectData;
 
 public class AdminHomeController implements Initializable{
@@ -49,6 +50,8 @@ public class AdminHomeController implements Initializable{
         searchText.setText("");
         // Get all users from database
         ResultSet users = SelectData.getData("SELECT * FROM users");
+        // Clear old results
+        obList.clear();
         try {
         // Loop through the users and add them to array
         while (users.next()) {
@@ -80,6 +83,30 @@ public class AdminHomeController implements Initializable{
     }
     // Set user array to table
     userTable.setItems(obList);
+    }
+
+    public void changeStatusOfUser() {
+        // Get email and status
+        UserModelTable emailField = userTable.getSelectionModel().getSelectedItem();
+        String email = emailField.getEmail();
+        UserModelTable statusField = userTable.getSelectionModel().getSelectedItem();
+        String status = statusField.getStatus();
+        // Change status
+        if(status.equals("true")) {
+            status = "false";
+        } else {
+            status = "true";
+        }
+        // Update status on database
+        try {
+            int changeStatusValue = JOptionPane.showConfirmDialog(null, "Do you want to change status of "+email+"", "Change status", JOptionPane.YES_NO_OPTION);
+            if(changeStatusValue == 0) {
+                InsertUpdateDelete.setData("UPDATE users SET status='"+status+"' WHERE email='"+email+"'", "Status changed successfully!");
+                insertUsersToTable();
+            }
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null,e);
+        }
     }
 
     @Override
