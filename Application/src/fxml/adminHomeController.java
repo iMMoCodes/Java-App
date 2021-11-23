@@ -47,13 +47,30 @@ public class AdminHomeController implements Initializable{
 
     public void clearSearch() {
         searchText.setText("");
+        // Get all users from database
+        ResultSet users = SelectData.getData("SELECT * FROM users");
+        try {
+        // Loop through the users and add them to array
+        while (users.next()) {
+            obList.add(new UserModelTable(users.getString("name"), users.getString("email"), users.getString("address"), users.getString("status")));
+        }
+        users.close();
+        } catch(Exception e) {
+            JOptionPane.showMessageDialog(null, e);
+        }
+        // Set array to table
+        userTable.setItems(obList);
     }
 
     public void insertUsersToTable() {
+        // Get searchbar text
         String nameOrEmail = searchText.getText();
+        // Get results from database that match the searchbar text
         ResultSet users = SelectData.getData("SELECT * FROM users WHERE name LIKE '%"+nameOrEmail+"%' OR email LIKE '%"+nameOrEmail+"%'");
+        // Remove old items from the table
         obList.clear();
         try {
+        // Loop through users that match and set them to array
         while (users.next()) {
             obList.add(new UserModelTable(users.getString("name"), users.getString("email"), users.getString("address"), users.getString("status")));
         }
@@ -61,13 +78,16 @@ public class AdminHomeController implements Initializable{
     } catch(Exception e) {
         JOptionPane.showMessageDialog(null, e);
     }
+    // Set user array to table
     userTable.setItems(obList);
     }
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
+        // Get all users from database
         ResultSet users = SelectData.getData("SELECT * FROM users");
         try {
+        // Loop through the users and add them to array
         while (users.next()) {
             obList.add(new UserModelTable(users.getString("name"), users.getString("email"), users.getString("address"), users.getString("status")));
         }
@@ -75,6 +95,7 @@ public class AdminHomeController implements Initializable{
         } catch(Exception e) {
         JOptionPane.showMessageDialog(null, e);
     }
+        // Set array to table
         userTable.setItems(obList);
 
         name.setCellValueFactory(new PropertyValueFactory<>("name"));
