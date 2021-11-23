@@ -1,6 +1,81 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
 
-
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" />
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="768.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="fxml.adminHomeController">
+   <children>
+      <ImageView fitHeight="768.0" fitWidth="1280.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/adminBackground.png" />
+         </image>
+      </ImageView>
+      <Label layoutX="10.0" text="Welcome Admin" textFill="#a6c0ff">
+         <font>
+            <Font name="Algerian" size="64.0" />
+         </font>
+      </Label>
+      <Button layoutX="1105.0" layoutY="5.0" mnemonicParsing="false" prefHeight="48.0" prefWidth="170.0" style="-fx-background-color: #2e2b2b; -fx-border-color: #1846c4; -fx-border-radius: 20; -fx-background-radius: 20; -fx-border-width: 2;" textFill="#c61616">
+         <font>
+            <Font name="Algerian" size="24.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
+      <Label layoutX="1157.0" layoutY="15.0" text="LOGOUT" textFill="#1846c4">
+         <font>
+            <Font name="Algerian" size="24.0" />
+         </font>
+      </Label>
+      <ImageView fitHeight="28.0" fitWidth="38.0" layoutX="1119.0" layoutY="15.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/logout.png" />
+         </image>
+      </ImageView>
+      <Button layoutX="1105.0" layoutY="5.0" mnemonicParsing="false" onAction="#logOut" opacity="0.0" prefHeight="48.0" prefWidth="170.0" style="-fx-background-color: #2e2b2b; -fx-border-color: #1846c4; -fx-border-radius: 20; -fx-background-radius: 20; -fx-border-width: 2;">
+         <font>
+            <Font name="Algerian" size="24.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
+      <Label layoutX="350.0" layoutY="123.0" text="Search By User Or Email: " textFill="#a6c0ff">
+         <font>
+            <Font name="Rockwell" size="24.0" />
+         </font>
+      </Label>
+      <TextField layoutX="635.0" layoutY="120.0" prefHeight="34.0" prefWidth="370.0">
+         <font>
+            <Font name="Rockwell" size="18.0" />
+         </font>
+      </TextField>
+      <Button layoutX="1025.0" layoutY="120.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="105.0" text="Search" textFill="#1846c4">
+         <font>
+            <Font name="Rockwell" size="18.0" />
+         </font>
+      </Button>
+      <Button layoutX="1145.0" layoutY="120.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="105.0" text="Clear" textFill="#1846c4">
+         <font>
+            <Font name="Rockwell" size="18.0" />
+         </font>
+      </Button>
+      <TableView layoutX="350.0" layoutY="185.0" prefHeight="500.0" prefWidth="900.0">
+        <columns>
+          <TableColumn prefWidth="225.0" text="Name" />
+          <TableColumn minWidth="0.0" prefWidth="225.0" text="Email" />
+            <TableColumn prefWidth="225.0" text="Address" />
+            <TableColumn prefWidth="225.0" text="Status" />
+        </columns>
+      </TableView>
+   </children>
+</AnchorPane>
