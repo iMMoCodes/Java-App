@@ -56,7 +56,7 @@ public class SignUpController implements Initializable {
         } else {
             // Insert data to database
             String query;
-            query = "insert into users values('"+name+"','"+email+"','"+password+"','"+securityQuestion+"','"+answer+"','"+address+"','false')";
+            query = "INSERT INTO users VALUES('"+name+"','"+email+"','"+password+"','"+securityQuestion+"','"+answer+"','"+address+"','false')";
             InsertUpdateDelete.setData(query, "Registered succesfully!");
         }
     }
