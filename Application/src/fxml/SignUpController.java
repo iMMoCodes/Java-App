@@ -2,6 +2,7 @@ package fxml;
 
 import mySQLConnection.InsertUpdateDelete;
 
+import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
@@ -9,11 +10,16 @@ import javax.swing.JOptionPane;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
+import javafx.stage.Stage;
 
 public class SignUpController implements Initializable {
     // -------------------- VARIABLES -------------------- \\
@@ -40,6 +46,10 @@ public class SignUpController implements Initializable {
         "What elementary school did you attend?",
         "What is the name of town where you were born?"
         };
+    
+    private Stage stage;
+    private Scene scene;
+    private Parent root;
     // -------------------- END OF VARIABLES -------------------- \\
 
     public void sendSignUpData(ActionEvent event) {
@@ -66,4 +76,19 @@ public class SignUpController implements Initializable {
     public void initialize(URL location, ResourceBundle resources) {
         securityComboBox.getItems().addAll(securityChoices);
     }
+
+    // -------------------- PAGE CHANGES -------------------- \\
+    public void switchToLogin(ActionEvent event) {
+        try {
+            root = FXMLLoader.load(getClass().getResource("login.fxml"));
+            stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+            scene = new Scene(root);
+            stage.setScene(scene);
+            stage.setTitle("Login");
+            stage.show();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+    // -------------------- END OF PAGE CHANGES -------------------- \\
 }
