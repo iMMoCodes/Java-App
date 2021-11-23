@@ -2,7 +2,6 @@ package fxml;
 
 import mySQLConnection.InsertUpdateDelete;
 
-import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
@@ -10,16 +9,11 @@ import javax.swing.JOptionPane;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.scene.Node;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
-import javafx.stage.Stage;
 
 public class SignUpController implements Initializable {
     // -------------------- VARIABLES -------------------- \\
@@ -38,7 +32,6 @@ public class SignUpController implements Initializable {
     @FXML
     private TextField signUpAddressField;
 
-    String securityQuestion;
     // Security question options
     private String[] securityChoices = {
         "What is the name of your first pet?",
@@ -47,9 +40,7 @@ public class SignUpController implements Initializable {
         "What is the name of town where you were born?"
         };
     
-    private Stage stage;
-    private Scene scene;
-    private Parent root;
+        private SceneController sceneController = new SceneController();
     // -------------------- END OF VARIABLES -------------------- \\
 
     public void sendSignUpData(ActionEvent event) {
@@ -79,16 +70,7 @@ public class SignUpController implements Initializable {
 
     // -------------------- PAGE CHANGES -------------------- \\
     public void switchToLogin(ActionEvent event) {
-        try {
-            root = FXMLLoader.load(getClass().getResource("login.fxml"));
-            stage = (Stage)((Node)event.getSource()).getScene().getWindow();
-            scene = new Scene(root);
-            stage.setScene(scene);
-            stage.setTitle("Login");
-            stage.show();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+        sceneController.switchToLogin(event);
     }
     // -------------------- END OF PAGE CHANGES -------------------- \\
 }

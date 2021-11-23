@@ -2,31 +2,23 @@ package fxml;
 
 import mySQLConnection.SelectData;
 
-import java.io.IOException;
 import java.sql.ResultSet;
 
 import javax.swing.JOptionPane;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Node;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
-import javafx.stage.Stage;
 
 public class LoginController {
     // -------------------- VARIABLES -------------------- \\
-    private Stage stage;
-    private Scene scene;
-    private Parent root;
-
     @FXML
     private TextField loginEmailField;
     @FXML
     private PasswordField loginPasswordField;
+
+    private SceneController sceneController = new SceneController();
     // -------------------- END OF VARIABLES -------------------- \\
 
     public void sendLoginData(ActionEvent event) {
@@ -72,42 +64,19 @@ public class LoginController {
 
     // -------------------- PAGE CHANGES -------------------- \\
     public void switchToAdminHome(ActionEvent event) {
-        try {
-            root = FXMLLoader.load(getClass().getResource("adminHome.fxml"));
-            stage = (Stage)((Node)event.getSource()).getScene().getWindow();
-            scene = new Scene(root);
-            stage.setScene(scene);
-            stage.setTitle("Admin Home");
-            stage.show();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+        sceneController.switchToAdminHome(event);
     }
 
     public void switchToHome(ActionEvent event) {
-        try {
-            root = FXMLLoader.load(getClass().getResource("home.fxml"));
-            stage = (Stage)((Node)event.getSource()).getScene().getWindow();
-            scene = new Scene(root);
-            stage.setScene(scene);
-            stage.setTitle("Home");
-            stage.show();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+        sceneController.switchToHome(event);
     }
     
     public void switchToSignUp(ActionEvent event) {
-        try {
-            root = FXMLLoader.load(getClass().getResource("signUp.fxml"));
-            stage = (Stage)((Node)event.getSource()).getScene().getWindow();
-            scene = new Scene(root);
-            stage.setScene(scene);
-            stage.setTitle("Sign Up");
-            stage.show();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+        sceneController.switchToSignUp(event);
+    }
+
+    public void switchToForgotPassword(ActionEvent event) {
+        sceneController.switchToForgotPassword(event);
     }
     // -------------------- END OF PAGE CHANGES -------------------- \\
 }
